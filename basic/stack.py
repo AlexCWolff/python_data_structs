@@ -25,6 +25,7 @@ class Stack:
         """Returns the count of items in the stack."""
         return len(self.items)
 
+
 class ReverseStack:
     """Implements a stack where the top is at the beginning."""
     def __init__(self):
