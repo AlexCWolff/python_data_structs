@@ -14,13 +14,28 @@ If there's anything you do not understand, file an issue and I will attempt to c
 ### Contents
 * big_o.py - Some simple examples of Big O algorithms in Python.
 * basic - The basic data structures, with some examples.
+    1. stack
+    2. queue
+    3. deque
+    4. unordered list
+    5. ordered list
 * recursion - Some examples of recursive algorithms.
+    1. simple
+    2. stack frames
+    3. visualizing recursion simple
+    4. visualizing recursion
+    5. sierpinski triangle
+    6. tower of hanoi
+    7. maze
+    8. dynamic programming
 * sort_search - Some examples of sorting and searching algorithms.
 * tree - Some examples of trees and tree algorithms.
 * graphs - Some examples of graphs and graph algorithms.
 
 ### Todo
-* recursion
+* More Big O examples
+* Simplify some basic structure methods
+* Do some better explanations in recursion
 * sort_search
 * tree
 * graphs
