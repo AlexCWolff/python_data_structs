@@ -4,17 +4,17 @@ from stack import Stack, ReverseStack
 STACK = Stack()
 REVERSE_STACK = ReverseStack()
 
-print(STACK.is_empty())
+print(STACK.is_empty)
 STACK.push(4)
 STACK.push('dog')
 print(STACK.peek())
 STACK.push(True)
-print(STACK.size())
-print(STACK.is_empty())
+print(STACK.size)
+print(STACK.is_empty)
 STACK.push(8.4)
 print(STACK.pop())
 print(STACK.pop())
-print(STACK.size())
+print(STACK.size)
 
 REVERSE_STACK.push('hello')
 REVERSE_STACK.push('true')
@@ -34,14 +34,14 @@ def par_checker(symbol_string):
         if symbol in "([{":
             s.push(symbol)
         else:
-            if s.is_empty():
+            if s.is_empty:
                 balanced = False
             else:
                 top = s.pop()
                 if not matches(top, symbol):
                     balanced = False
         index += 1
-    if balanced and s.is_empty():
+    if balanced and s.is_empty:
         return True
     else:
         return False
@@ -70,7 +70,7 @@ def base_converter(number, base):
         number = number // base
 
     new_string = ""
-    while not remstack.is_empty():
+    while not remstack.is_empty:
         new_string += digits[remstack.pop()]
 
     return new_string
@@ -115,13 +115,13 @@ def infix_to_postfix(infix_expr):
             While the stack isn't empty and the precedence of the last item in the stack is
             greater than or equal to the current operator, pop the item from the stack and append it to the output.
             """
-            while (not op_stack.is_empty()) and (prec[op_stack.peek()] >= prec[token]):
+            while (not op_stack.is_empty) and (prec[op_stack.peek()] >= prec[token]):
                 postfix_list.append(op_stack.pop())
             # Put the operator back on the stack.
             op_stack.push(token)
 
     # While the stack isn't empty
-    while not op_stack.is_empty():
+    while not op_stack.is_empty:
         # Pop and append the last item on the stack to the output
         postfix_list.append(op_stack.pop())
     # Return output list as a string.

@@ -6,13 +6,13 @@ d = Deque()
 Test the methods of our deque. This could be accomplished with print statements as with 
 the stack and queue, but why do that when python can do it for us more accurately?
 """
-assert d.is_empty() is True
+assert d.is_empty is True
 d.add_rear(4)
 d.add_rear('dog')
 d.add_front('cat')
 d.add_front(True)
-assert d.size() is 4
-assert d.is_empty() is False
+assert d.size is 4
+assert d.is_empty is False
 d.add_rear(8.4)
 assert d.remove_rear() is 8.4
 assert d.remove_front() is True
@@ -35,7 +35,7 @@ def palindrome_checker(s):
     While there is more than one character in the deque and the characters are still matching. 
     If there is only one character left, it's exactly in the middle and will always be the same.
     """
-    while char_deque.size() > 1 and still_equal:
+    while char_deque.size > 1 and still_equal:
         # Grab the next items from the front and rear of the deque
         first = char_deque.remove_front()
         last = char_deque.remove_rear()

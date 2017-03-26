@@ -8,9 +8,11 @@ class Node:
         self.data = init_data
         self.next = None
 
+    @property
     def get_data(self):
         return self.data
 
+    @property
     def get_next(self):
         return self.next
 
@@ -29,6 +31,7 @@ class UnorderedList:
         self.head = None
         self.tail = None
 
+    @property
     def is_empty(self):
         return self.head is None
 
@@ -45,13 +48,14 @@ class UnorderedList:
 
         self.head = temp
 
+    @property
     def size(self):
         """Returns length of the list."""
         current = self.head
         count = 0
         while current is not None:
             count += 1
-            current = current.get_next()
+            current = current.get_next
 
         return count
 
@@ -60,10 +64,10 @@ class UnorderedList:
         current = self.head
         found = False
         while current is not None and not found:
-            if current.get_data() == item:
+            if current.get_data == item:
                 found = True
             else:
-                current = current.get_next()
+                current = current.get_next
 
         return found
 
@@ -74,18 +78,18 @@ class UnorderedList:
         previous = None
         found = False
         while not found:
-            if current.get_data() == item:
+            if current.get_data == item:
                 found = True
             else:
                 previous = current
-                current = current.get_next()
+                current = current.get_next
         if previous is None:
-            self.head = current.get_next()
+            self.head = current.get_next
         elif current == self.tail:
             self.tail = previous
-            previous.set_next(current.get_next())
+            previous.set_next(current.get_next)
         else:
-            previous.set_next(current.get_next())
+            previous.set_next(current.get_next)
 
     def append(self, item):
         """
@@ -105,10 +109,10 @@ class UnorderedList:
         found = False
         index = 0
         while current and not found:
-            if current.get_data() == item:
+            if current.get_data == item:
                 found = True
             else:
-                current = current.get_next()
+                current = current.get_next
                 index += 1
 
         return index
@@ -122,7 +126,7 @@ class UnorderedList:
         previous = None
         while pos > index:
             previous = current
-            current = current.get_next()
+            current = current.get_next
             index += 1
         if previous is None:
             temp.set_next(current)
@@ -135,26 +139,24 @@ class UnorderedList:
             temp.set_next(current)
 
     def pop(self):
-        """
-        Removes and returns the last item in the list. It needs nothing and returns the item.
-        """
+        """Removes and returns the last item in the list. It needs nothing and returns the item."""
         # Maybe could be simpler
         current = self.head
         previous = None
         while current is not self.tail:
             previous = current
-            current = current.get_next()
+            current = current.get_next
         if previous is None:
-            self.head = current.get_next()
+            self.head = current.get_next
         elif current == self.tail:
             self.tail = previous
-            previous.set_next(current.get_next())
+            previous.set_next(current.get_next)
         else:
-            previous.set_next(current.get_next())
+            previous.set_next(current.get_next)
 
     def __iter__(self):
         """For debugging purposes, anytime iteration is called it yields all of the node objects."""
         current = self.head
         while current:
-            yield current.get_data()
-            current = current.get_next()
+            yield current.get_data
+            current = current.get_next
