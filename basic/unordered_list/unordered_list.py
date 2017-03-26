@@ -53,7 +53,7 @@ class UnorderedList:
         """Returns length of the list."""
         current = self.head
         count = 0
-        while current is not None:
+        while current:
             count += 1
             current = current.get_next
 
@@ -62,30 +62,27 @@ class UnorderedList:
     def search(self, item):
         """Finds item, returns boolean."""
         current = self.head
-        found = False
-        while current is not None and not found:
+        while current:
             if current.get_data == item:
-                found = True
+                return True
             else:
                 current = current.get_next
 
-        return found
+        return False
 
     def remove(self, item):
         """Removes the item from the list, and fixes links."""
-        # Could maybe be simpler
         current = self.head
         previous = None
-        found = False
-        while not found:
+        while current:
             if current.get_data == item:
-                found = True
+                break
             else:
                 previous = current
                 current = current.get_next
         if previous is None:
             self.head = current.get_next
-        elif current == self.tail:
+        if current == self.tail:
             self.tail = previous
             previous.set_next(current.get_next)
         else:
@@ -104,26 +101,22 @@ class UnorderedList:
 
     def index(self, item):
         """Returns the position of item in the list. It needs the item and returns the index."""
-        # This could maybe be simpler.
         current = self.head
-        found = False
         index = 0
-        while current and not found:
+        while current:
             if current.get_data == item:
-                found = True
+                return index
             else:
                 current = current.get_next
                 index += 1
-
-        return index
 
     def insert(self, pos, item):
         """Adds a new item to the list at position pos. It needs the item and returns nothing."""
         # This could probably be simpler
         temp = Node(item)
         current = self.head
-        index = 0
         previous = None
+        index = 0
         while pos > index:
             previous = current
             current = current.get_next
@@ -131,7 +124,7 @@ class UnorderedList:
         if previous is None:
             temp.set_next(current)
             self.head = temp
-        elif current == self.tail:
+        if current == self.tail:
             self.tail = temp
             previous.set_next(temp)
         else:
@@ -140,19 +133,15 @@ class UnorderedList:
 
     def pop(self):
         """Removes and returns the last item in the list. It needs nothing and returns the item."""
-        # Maybe could be simpler
         current = self.head
         previous = None
         while current is not self.tail:
             previous = current
             current = current.get_next
         if previous is None:
-            self.head = current.get_next
-        elif current == self.tail:
-            self.tail = previous
-            previous.set_next(current.get_next)
-        else:
-            previous.set_next(current.get_next)
+            self.head = previous
+        self.tail = previous
+        previous.set_next(current.get_next)
 
     def __iter__(self):
         """For debugging purposes, anytime iteration is called it yields all of the node objects."""

@@ -31,34 +31,29 @@ class OrderedList:
         Since the list is ordered we know that if the number we are looking for is 
         between two entries, it does not exist and we can exit early.
         """
-        # This can definitely be simpler.
         current = self.head
-        found = False
-        stop = False
-        while current is not None and not found and not stop:
+        while current:
             if current.get_data == item:
-                found = True
+                return True
             else:
                 if current.get_data > item:
-                    stop = True
+                    return False
+                elif current.get_next is None:
+                    return False
                 else:
                     current = current.get_next
 
-        return found
-
     def add(self, item):
         # Could maybe be simpler.
+        temp = Node(item)
         current = self.head
         previous = None
-        stop = False
-        while current is not None and not stop:
+        while current:
             if current.get_data > item:
-                stop = True
+                break
             else:
                 previous = current
                 current = current.get_next
-
-        temp = Node(item)
         if previous is None:
             temp.set_next(self.head)
             self.head = temp
@@ -74,8 +69,15 @@ class OrderedList:
     def size(self):
         current = self.head
         count = 0
-        while current is not None:
+        while current:
             count += 1
             current = current.get_next
 
         return count
+
+    def __iter__(self):
+        """For debugging purposes, anytime iteration is called it yields all of the node objects."""
+        current = self.head
+        while current:
+            yield current.get_data
+            current = current.get_next
