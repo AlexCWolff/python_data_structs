@@ -156,6 +156,7 @@ def postfix_eval(postfix_expr):
 
 
 def do_math(op, op1, op2):
+    """Do the actual math operations."""
     if op == "*":
         return op1 * op2
     elif op == "/":

@@ -20,7 +20,7 @@ class Printer:
         self.time_remaining = 0
 
     def tick(self):
-        # Every second, if there is a current task
+        """Every second (tick), if there is a current task"""
         if self.current_task is not None:
             # Take one second off the time remaining
             self.time_remaining -= 1
@@ -31,16 +31,19 @@ class Printer:
 
     @property
     def busy(self):
-        # Determine if the printer is currently busy. Since this performs no actions,
-        # this is just a property of the Printer class, not a method.
+        """
+        Determine if the printer is currently busy. Since this performs no actions,
+        this is just a property of the Printer class, not a method.
+        """
         if self.current_task is not None:
             return True
         else:
             return False
 
     def start_next(self, new_task):
-        # Add a new task to the printer
+        """Add a new task to the printer."""
         self.current_task = new_task
+        # Set the time remaining to the number of pages, times 60, divided by ppm
         self.time_remaining = new_task.get_pages * 60 / self.page_rate
 
 
@@ -51,22 +54,22 @@ class Task:
     Returns the timestamp, page count, and wait time as output.
     """
     def __init__(self, time, pages):
-        # Initialize our task with the time it was submitted and the page count.
+        """Initialize our task with the time it was submitted and the page count."""
         self.timestamp = time
         self.pages = random.randrange(1, pages+1)
 
     @property
     def get_stamp(self):
-        # Get the timestamp for the task
+        """Get the timestamp for the task"""
         return self.timestamp
 
     @property
     def get_pages(self):
-        # Get the page count for the task
+        """Get the page count for the task."""
         return self.pages
 
     def wait_time(self, current_time):
-        # Get the wait time for the task
+        """Get the wait time for the task"""
         return current_time - self.timestamp
 
 
@@ -111,7 +114,7 @@ def simulation(num_seconds, ppm, page_limit, student_avg, job_avg):
 
 
 def new_print_task(seconds, students, jobs):
-    # Convert the time to hours to make the math easier
+    """Randomly determine if there should be a new task or not, based on given variables."""
     time_in_hours = seconds / 60 / 60
     # Get the number of tasks per hour
     tasks_per_hour = students * jobs / time_in_hours

@@ -20,8 +20,6 @@ If there's anything you do not understand, file an issue and I will attempt to c
 * graphs - Some examples of graphs and graph algorithms.
 
 ### Todo
-* Use more subdirectories
-* Clean up code in basic
 * recursion
 * sort_search
 * tree

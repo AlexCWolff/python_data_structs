@@ -1,5 +1,5 @@
 """
-TODO: Add log linear, cubic, exponential, more timers, examples
+TODO: Add log linear, cubic, exponential
 """
 
 
