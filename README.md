@@ -36,6 +36,9 @@ If there's anything you do not understand, file an issue and I will attempt to c
 * More Big O examples
 * Simplify some basic structure methods
 * Do some better explanations in recursion
-* sort_search
+* TODOs in sort_search
 * tree
 * graphs
+* End of chapter questions
+* Programming exercises
+* Testing

@@ -2,6 +2,7 @@
 TODO: Clean code, explain
 """
 
+
 def binary_search_simple(alist, item):
     first = 0
     last = len(alist)-1
