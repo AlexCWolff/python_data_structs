@@ -46,12 +46,15 @@ If there's anything you do not understand, file an issue and I will attempt to c
     5. binary search trees
     6. balanced binary search trees
 * graphs - Some examples of graphs and graph algorithms.
+    1. adjacency list
+    2. breadth first search
+    3. depth first search
+    4. shortest path
 
 ### Todo
 * More Big O examples
 * Simplify/pythonify code
 * Finish explanations
-* graphs
 * End of chapter questions
 * Programming exercises
 * Testing
