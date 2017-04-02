@@ -29,15 +29,28 @@ If there's anything you do not understand, file an issue and I will attempt to c
     7. maze
     8. dynamic programming
 * sort_search - Some examples of sorting and searching algorithms.
+    1. sequential search
+    2. binary search
+    3. hash table
+    4. bubble sort
+    5. selection sort
+    6. insertion sort
+    7. shell sort
+    8. merge sort
+    9. quick sort
 * tree - Some examples of trees and tree algorithms.
+    1. list of lists
+    2. binary tree
+    3. parse tree
+    4. binary heap
+    5. binary search trees
+    6. balanced binary search trees
 * graphs - Some examples of graphs and graph algorithms.
 
 ### Todo
 * More Big O examples
-* Simplify some basic structure methods
-* Do some better explanations in recursion
-* TODOs in sort_search
-* tree
+* Simplify/pythonify code
+* Finish explanations
 * graphs
 * End of chapter questions
 * Programming exercises
